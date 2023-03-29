@@ -1,0 +1,8 @@
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<p>Current Active Sessions:</p>
+<% for (const sessionID in sessionList) { %>
+    <p>SessionID: <%= sessionID %></p>
+    <% const sessionObj = sessionList[sessionID] %>
+    <p>UserID: <%= sessionObj.passport.user %></p>
+    <a href="/revoke?sessionId=<%= sessionID %>">Revoke session</a>
+  <% } %>
